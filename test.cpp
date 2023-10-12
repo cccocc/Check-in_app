@@ -3,6 +3,7 @@ using namespace std;
 
 int main()
 {
-	cout<<"test good£¡£¡£¡";
+	cout<<"test good"<<endl;
+	cout<<"You are good!!!"; 
 	return 0;
  } 
