@@ -1,9 +1,14 @@
 {
   "pages": [
+    "pages/JudeLoginPage/JudeLoginPage/JudeLoginPage",
     "pages/index/index",
     "pages/course/course",
     "pages/record/record",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/login/login",
+    "pages/PasswordPopup/PasswordPopup",
+    "pages/UsernamePopup/UsernamePopup",
+    "pages/allPopup/allPopup"
   ],
   "subPackages": [],
   "window": {
@@ -15,7 +20,7 @@
     "color": "#000000",
     "selectedColor": "#2993d9",
     "iconWidth": "40rpx",
-    "fontSize": "50px",
+    "fontSize": "5px",
     "spacing": "5rpx",
     "list": [
       {

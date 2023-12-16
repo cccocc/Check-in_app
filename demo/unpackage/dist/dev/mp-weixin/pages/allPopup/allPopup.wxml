@@ -1,0 +1,1 @@
+<view hidden="{{!(visible)}}" class="all-popup _div data-v-bfbf1a34"><view data-event-opts="{{[['tap',[['closePopup',['$event']]]]]}}" class="popup-overlay _div data-v-bfbf1a34" bindtap="__e"></view><view class="popup-content _div data-v-bfbf1a34"><view class="_p data-v-bfbf1a34"><rich-text nodes="{{formattedMessage}}"></rich-text></view></view></view>

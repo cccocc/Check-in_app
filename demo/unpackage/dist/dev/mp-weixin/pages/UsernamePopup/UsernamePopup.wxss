@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 样式作用范围仅限于当前组件 */
+.username-popup.data-v-2ccd1bf4 {
+  /* 弹窗容器居中显示 */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px; /* 弹窗宽度 */
+  max-width: 80%; /* 弹窗最大宽度 */
+  background: #ffffff; /* 弹窗背景色 */
+  border-radius: 8px; /* 弹窗圆角 */
+  box-shadow: 0 2px 8px rgba(29, 66, 204, 0.5); /* 弹窗阴影 */
+  z-index: 1000; /* 弹窗层级 */
+}
+.popup-overlay.data-v-2ccd1bf4 {
+  /* 遮罩层全屏显示 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0); /* 遮罩层背景色 */
+  z-index: 999; /* 遮罩层层级 */
+}
+.popup-content.data-v-2ccd1bf4 {
+  /* 弹窗内容容器内边距 */
+  padding: 20px;
+  text-align: center; /* 弹窗文本居中 */
+  color: #1d42cc; /* 弹窗文本颜色 */
+  font-size: 14px; /* 弹窗字体大小 */
+  font-family:cursive;
+}
+
