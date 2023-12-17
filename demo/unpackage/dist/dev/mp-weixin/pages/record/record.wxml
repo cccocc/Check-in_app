@@ -1,0 +1,1 @@
+<view class="container1"><button data-event-opts="{{[['tap',[['gotoPersonRecord',['$event']]]]]}}" class="box1 b1" bindtap="__e"><text class="character1 cha_1">个人考勤记录</text></button><button data-event-opts="{{[['tap',[['gotoClassRecord',['$event']]]]]}}" class="box1 b2" bindtap="__e"><text class="character1 cha_2">班级考勤记录</text></button></view>

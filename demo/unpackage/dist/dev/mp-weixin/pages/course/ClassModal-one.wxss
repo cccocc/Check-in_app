@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 样式自定义 */
+.modal-mask.data-v-d66524ce {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal.data-v-d66524ce 
+{
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  height: 35.1%;
+}
+input.data-v-d66524ce {
+  width: 90%;
+  margin-left: 5%; /* 调整左边距使输入框水平居中 */
+  margin-right: 5%; /* 调整右边距使输入框水平居中 */
+  border-radius: 13px;
+  background-color: rgba(255,255,255,1);
+  color: rgba(16,16,16,1);
+  font-size: 14px;
+  text-align: center;
+  font-family: Roboto;
+  border: 1px solid rgba(29,66,204,1);
+  margin-bottom: 10%;
+}
+.prompt.data-v-d66524ce
+{
+	color: rgba(29,66,204,1);
+	font-size: 16px;
+	text-align: left;
+	font-family: cursive;
+}
+.modal-buttons.data-v-d66524ce {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -5%;
+}
+.b.data-v-d66524ce{
+	background-color: rgba(29,66,204,1);
+	color: rgba(255,255,255,1);
+	width: 35%;
+	margin-top: 5%;
+	font-family: cursive;
+}
+
+

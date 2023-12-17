@@ -1,0 +1,1 @@
+<view class="container"><text class="Promption">今日课程</text><view class="father-vector"><view class="child-vector1">{{''+todayDate+''}}</view><view class="child-vector2">{{''+todayDay+''}}</view></view></view>

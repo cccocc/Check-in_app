@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "class-modal1": "/pages/course/ClassModal-one",
+    "class-modal2": "/pages/course/ClassModal-two"
+  }
+}
