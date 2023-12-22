@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/course/course",
     "pages/record/record",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/location/location",
+    "pages/scan_QRcode/scan_QRcode"
   ],
   "subPackages": [],
   "window": {

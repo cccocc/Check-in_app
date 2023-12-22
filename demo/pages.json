@@ -1,5 +1,14 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		// {
+		// 	"path" : "pages/test/test",
+		// 	"style" : 
+		// 	{
+		// 		"navigationBarTitleText" : "",
+		// 		"enablePullDownRefresh" : false
+		// 	}
+		// },
+		
 		{
 			"path": "pages/index/index",
 			
@@ -27,7 +36,16 @@
 			{
 				
 			}
+		},
+		{
+			"path" : "pages/location/location",
+			"style" : {}
+		},
+		{
+			"path" : "pages/scan_QRcode/scan_QRcode",
+			"style" : {}
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

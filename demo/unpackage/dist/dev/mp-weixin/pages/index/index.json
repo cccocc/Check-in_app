@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "signcode": "/pages/index/signcode",
+    "createcode": "/pages/index/create_code",
+    "creatlocation": "/pages/index/create_location",
+    "createscan": "/pages/index/create_scan"
+  }
 }

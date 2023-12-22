@@ -135,21 +135,107 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-//
-//
-//
-//
-//
-//
-//
-var _default = {};
+var signcode = function signcode() {
+  __webpack_require__.e(/*! require.ensure | pages/index/signcode */ "pages/index/signcode").then((function () {
+    return resolve(__webpack_require__(/*! ./signcode.vue */ 74));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var createcode = function createcode() {
+  __webpack_require__.e(/*! require.ensure | pages/index/create_code */ "pages/index/create_code").then((function () {
+    return resolve(__webpack_require__(/*! ./create_code.vue */ 81));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var creatlocation = function creatlocation() {
+  __webpack_require__.e(/*! require.ensure | pages/index/create_location */ "pages/index/create_location").then((function () {
+    return resolve(__webpack_require__(/*! ./create_location.vue */ 88));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var createscan = function createscan() {
+  __webpack_require__.e(/*! require.ensure | pages/index/create_scan */ "pages/index/create_scan").then((function () {
+    return resolve(__webpack_require__(/*! ./create_scan.vue */ 125));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
+var _default = {
+  components: {
+    signcode: signcode,
+    createcode: createcode,
+    creatlocation: creatlocation,
+    createscan: createscan
+  },
+  data: function data() {
+    return {
+      status_sign: 1,
+      //未被点击时为1，点击时设为2
+      status_create: 1,
+      //未被点击时为1，点击时设为0
+      status_sign_code: 0,
+      status_create_code: 0,
+      status_create_location: 0,
+      status_create_scan: 0
+    };
+  },
+  methods: {
+    show_sign: function show_sign() {
+      this.status_sign = 2;
+      this.status_create = 0;
+    },
+    show_create: function show_create() {
+      this.status_sign = 0;
+      this.status_create = 2;
+    },
+    back_click: function back_click() {
+      this.status_sign = 1;
+      this.status_create = 1;
+    },
+    location_click: function location_click() {
+      uni.navigateTo({
+        url: "/pages/location/location"
+      });
+    },
+    sign_scan_blick: function sign_scan_blick() {
+      // 允许从相机和相册扫码
+      uni.scanCode({
+        success: function success(res) {
+          console.log('条码类型：' + res.scanType);
+          console.log('条码内容：' + res.result);
+        }
+      });
+    },
+    sign_code_click: function sign_code_click() {
+      this.status_sign_code = 1;
+      console.log(this.status_sign_code);
+    },
+    handleCancel: function handleCancel() {
+      this.status_sign_code = 0;
+      this.status_create_code = 0;
+      this.status_create_location = 0;
+      this.status_create_scan = 0;
+    },
+    create_code_click: function create_code_click() {
+      this.status_create_code = 1;
+    },
+    create_location_click: function create_location_click() {
+      this.status_create_location = 1;
+    },
+    create_scan_click: function create_scan_click() {
+      this.status_create_scan = 1;
+    },
+    handleComfirm: function handleComfirm() {
+      this.status_create_scan = 0;
+      uni.navigateTo({
+        url: "/pages/scan_QRcode/scan_QRcode"
+      });
+    }
+  }
+};
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 

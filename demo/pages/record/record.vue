@@ -1,7 +1,5 @@
 <template>
-	<view>
-		考勤记录
-	</view>
+	
 </template>
 
 <script>
@@ -21,4 +19,7 @@
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
+	         
+	
+	 
 </style>
