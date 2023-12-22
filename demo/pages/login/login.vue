@@ -42,7 +42,8 @@
 			
 			<!--弹窗-->
 			<All-popup :visible="AllPopupVisible" :message="popupMessage" @close="closeAllPopup"></All-popup>
-			
+			<InputPopup ref="inputPopup" :visible="InputPopupVisible" @close="closeInputPopup" ></InputPopup>
+
 		</view>
 	  </view>
 </template>
@@ -78,7 +79,7 @@
 	    font-size: 14px;
 	    text-align: center;
 	    font-family: Roboto;
-	    border: 1px solid rgba(187,187,187,1);
+	    border: 1px solid rgba(29, 66, 204, 0.5);
 		.login-button {
 		    position: fixed;
 		    left: 30%;
@@ -203,9 +204,11 @@
 <script>
 	import AllPopup from '../allPopup/allPopup.vue';
 	import { isStrongPassword,hasSpecialCharacters } from '../../judge/passwordUtils.js';
+	import InputPopup from '../InputPopup.vue';
   export default {
 	  components: {
-		  AllPopup
+		  AllPopup,
+		  InputPopup,
 	    },
     data() {
       return {
@@ -221,11 +224,13 @@
 				  judgepassword:''
 						},
 			AllPopupVisible: false,
+			InputPopupVisible: false,
 			popupMessage: '',
 			showPassword: false,
 			waiting: false,
 			flag: true,
 			url: '../../static/闭眼.png',
+			inputPopupData: {},  // 用于存储 InputPopup 提交的数据
 		};
     },
 	
@@ -256,12 +261,35 @@
 	  closeAllPopup(){
 			this.AllPopupVisible = false;
 	  },
+	  showInputPopup(){
+		  // 将提交操作的逻辑作为回调函数传递给 InputPopup
+		      this.$refs.inputPopup.setSubmitCallback(() => {
+		        this.waiting = true; // 进入等待状态
+		        this.showAllPopup("加载中...");
+		              setTimeout(() => {
+		                // 清空输入框的值
+		                this.clearInput();
+		        		this.waiting = false; 
+		                // 退出等待状态
+		        		
+		                // 检查当前表单是否为注册表单，然后延迟两秒切换
+		                if (this.currentForm === 'register') {
+		                  setTimeout(() => {
+		                    this.currentForm = 'login';
+		        			this.showAllPopup("注册成功");
+		                  }, 2000);
+		                }
+		              }, 2000);
+		      });
+		    this.InputPopupVisible = true;
+	  },
+	  closeInputPopup(){
+			this.InputPopupVisible = false;
+	  },
 	  register() {
 		const username = this.registeruserInfo.userName;
 		const password = this.registeruserInfo.password;
 		const judgepassword = this.registeruserInfo.judgepassword;
-		console.log(username);
-		console.log(password);
 		if(!username){
 			this.showAllPopup('用户名不能为空！！！');
 			return;
@@ -294,23 +322,10 @@
 			this.showAllPopup("两次输入密码不一致，请重新输入！！！");
 			return;
 		}
-	  
-	    this.waiting = true; // 进入等待状态
-	    this.showAllPopup("加载中...");
-	          setTimeout(() => {
-	            // 清空输入框的值
-	            this.clearInput();
-				this.waiting = false; 
-	            // 退出等待状态
-	    
-	            // 检查当前表单是否为注册表单，然后延迟两秒切换
-	            if (this.currentForm === 'register') {
-	              setTimeout(() => {
-	                this.currentForm = 'login';
-					this.showAllPopup("注册成功");
-	              }, 2000);
-	            }
-	          }, 2000);
+		console.log('用户名：',username);
+		console.log('密码：',password);
+		this.showInputPopup();
+		
 	  },
 		login(){
 			this.waiting = true; // 进入等待状态

@@ -101,6 +101,42 @@ page {
   /* 高度设置为父元素高度的80% */
   width: 70px;
 }
+.custom-button .user-name {
+  position: absolute;
+  left: 75px;
+  top: 30%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 5px;
+}
+.custom-button .user-id {
+  position: absolute;
+  left: 75px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 5px;
+}
+.custom-button .user-class {
+  position: absolute;
+  left: 75px;
+  top: 70%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  text-align: left;
+  margin-left: 10px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 5px;
+}
 /* 媒体查询，根据屏幕宽度调整按钮大小 */
 @media screen and (max-width: 0px) {
 .custom-button {

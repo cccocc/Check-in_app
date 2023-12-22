@@ -8,7 +8,8 @@
     "pages/login/login",
     "pages/PasswordPopup/PasswordPopup",
     "pages/UsernamePopup/UsernamePopup",
-    "pages/allPopup/allPopup"
+    "pages/allPopup/allPopup",
+    "pages/InputPopup/InputPopup"
   ],
   "subPackages": [],
   "window": {

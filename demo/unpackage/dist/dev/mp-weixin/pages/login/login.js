@@ -346,9 +346,16 @@ var _passwordUtils = __webpack_require__(/*! ../../judge/passwordUtils.js */ 88)
 //
 //
 //
+//
+var InputPopup = function InputPopup() {
+  __webpack_require__.e(/*! require.ensure | pages/InputPopup */ "pages/InputPopup").then((function () {
+    return resolve(__webpack_require__(/*! ../InputPopup.vue */ 116));
+  }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
+};
 var _default = {
   components: {
-    AllPopup: _allPopup.default
+    AllPopup: _allPopup.default,
+    InputPopup: InputPopup
   },
   data: function data() {
     return {
@@ -365,13 +372,16 @@ var _default = {
         judgepassword: ''
       },
       AllPopupVisible: false,
+      InputPopupVisible: false,
       popupMessage: '',
       showPassword: false,
       waiting: false,
       flag: true,
-      url: '../../static/闭眼.png'
+      url: '../../static/闭眼.png',
+      inputPopupData: {} // 用于存储 InputPopup 提交的数据
     };
   },
+
   methods: {
     clearInput: function clearInput() {
       // 清空输入框的值
@@ -398,13 +408,36 @@ var _default = {
     closeAllPopup: function closeAllPopup() {
       this.AllPopupVisible = false;
     },
-    register: function register() {
+    showInputPopup: function showInputPopup() {
       var _this = this;
+      // 将提交操作的逻辑作为回调函数传递给 InputPopup
+      this.$refs.inputPopup.setSubmitCallback(function () {
+        _this.waiting = true; // 进入等待状态
+        _this.showAllPopup("加载中...");
+        setTimeout(function () {
+          // 清空输入框的值
+          _this.clearInput();
+          _this.waiting = false;
+          // 退出等待状态
+
+          // 检查当前表单是否为注册表单，然后延迟两秒切换
+          if (_this.currentForm === 'register') {
+            setTimeout(function () {
+              _this.currentForm = 'login';
+              _this.showAllPopup("注册成功");
+            }, 2000);
+          }
+        }, 2000);
+      });
+      this.InputPopupVisible = true;
+    },
+    closeInputPopup: function closeInputPopup() {
+      this.InputPopupVisible = false;
+    },
+    register: function register() {
       var username = this.registeruserInfo.userName;
       var password = this.registeruserInfo.password;
       var judgepassword = this.registeruserInfo.judgepassword;
-      console.log(username);
-      console.log(password);
       if (!username) {
         this.showAllPopup('用户名不能为空！！！');
         return;
@@ -437,22 +470,9 @@ var _default = {
         this.showAllPopup("两次输入密码不一致，请重新输入！！！");
         return;
       }
-      this.waiting = true; // 进入等待状态
-      this.showAllPopup("加载中...");
-      setTimeout(function () {
-        // 清空输入框的值
-        _this.clearInput();
-        _this.waiting = false;
-        // 退出等待状态
-
-        // 检查当前表单是否为注册表单，然后延迟两秒切换
-        if (_this.currentForm === 'register') {
-          setTimeout(function () {
-            _this.currentForm = 'login';
-            _this.showAllPopup("注册成功");
-          }, 2000);
-        }
-      }, 2000);
+      console.log('用户名：', username);
+      console.log('密码：', password);
+      this.showInputPopup();
     },
     login: function login() {
       var _this2 = this;
