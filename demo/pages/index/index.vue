@@ -29,7 +29,7 @@
 			创建定位签到
 		</button>
 		
-		<signcode v-show="status_sign_code==1" @cancel="handleCancel">
+		<signcode v-show="status_sign_code==1" @cancel="handleCancel" @comfirm="handleComfirm_back">
 		</signcode>
 		<createcode v-show="status_create_code==1" @cancel="handleCancel">
 		</createcode>
@@ -108,6 +108,9 @@
 				uni.navigateTo({
 					url: "/pages/scan_QRcode/scan_QRcode"
 				})
+			},
+			handleComfirm_back(){
+				this.status_sign_code=0;
 			}
 		}
 	}

@@ -49,7 +49,55 @@
 		    },
 			comfirm_click(){
 				console.log(this.codeNumber);
-				
+				const regex = /^\d{4}$/;
+				if(regex.test(this.codeNumber)){
+					uni.request({
+						url: 'http://localhost:8181/signin/signin/doSignIn',
+						method: "POST",
+						data:{
+							"type":"CODE",
+							"code":this.codeNumber
+						},
+						header:{
+							"Content-Type": "application/json"
+						},
+						success: (res) => {
+								console.log(res.data);
+								console.log(res.statusCode);
+								if(res.statusCode == 200)
+								{
+									uni.showToast({
+										title: "签到成功",
+										duration: 1200
+									});
+									this.codeNumber='';
+									this.$emit('comfirm')
+								}
+								else{
+									uni.showToast({
+										title:"签到失败",
+										icon:"error",
+										duration: 1200
+									});
+								}
+						},
+						fail:(res) => {
+							console.log(res.data);
+							uni.showToast({
+								title:"检查网络设置",
+								icon:"error",
+								duration:1200
+							})
+						}
+					})
+				}
+				else{
+					uni.showToast({
+						title:"请输入正确签到码",
+						icon:'none',
+						duration:1200
+					})
+				}
 			},
 			cancel_click(){
 				this.codeNumber=''

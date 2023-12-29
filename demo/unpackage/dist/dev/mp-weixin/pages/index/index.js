@@ -143,22 +143,22 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var signcode = function signcode() {
   __webpack_require__.e(/*! require.ensure | pages/index/signcode */ "pages/index/signcode").then((function () {
-    return resolve(__webpack_require__(/*! ./signcode.vue */ 74));
+    return resolve(__webpack_require__(/*! ./signcode.vue */ 82));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var createcode = function createcode() {
   __webpack_require__.e(/*! require.ensure | pages/index/create_code */ "pages/index/create_code").then((function () {
-    return resolve(__webpack_require__(/*! ./create_code.vue */ 81));
+    return resolve(__webpack_require__(/*! ./create_code.vue */ 89));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var creatlocation = function creatlocation() {
   __webpack_require__.e(/*! require.ensure | pages/index/create_location */ "pages/index/create_location").then((function () {
-    return resolve(__webpack_require__(/*! ./create_location.vue */ 88));
+    return resolve(__webpack_require__(/*! ./create_location.vue */ 96));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var createscan = function createscan() {
   __webpack_require__.e(/*! require.ensure | pages/index/create_scan */ "pages/index/create_scan").then((function () {
-    return resolve(__webpack_require__(/*! ./create_scan.vue */ 125));
+    return resolve(__webpack_require__(/*! ./create_scan.vue */ 103));
   }).bind(null, __webpack_require__)).catch(__webpack_require__.oe);
 };
 var _default = {
@@ -231,6 +231,9 @@ var _default = {
       uni.navigateTo({
         url: "/pages/scan_QRcode/scan_QRcode"
       });
+    },
+    handleComfirm_back: function handleComfirm_back() {
+      this.status_sign_code = 0;
     }
   }
 };

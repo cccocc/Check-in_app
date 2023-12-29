@@ -101,10 +101,10 @@ var components
 try {
   components = {
     uniCountdown: function () {
-      return Promise.all(/*! import() | uni_modules/uni-countdown/components/uni-countdown/uni-countdown */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-countdown/components/uni-countdown/uni-countdown")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-countdown/components/uni-countdown/uni-countdown.vue */ 95))
+      return Promise.all(/*! import() | uni_modules/uni-countdown/components/uni-countdown/uni-countdown */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-countdown/components/uni-countdown/uni-countdown")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-countdown/components/uni-countdown/uni-countdown.vue */ 110))
     },
     uniIcons: function () {
-      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 106))
+      return Promise.all(/*! import() | uni_modules/uni-icons/components/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-icons/components/uni-icons/uni-icons")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-icons/components/uni-icons/uni-icons.vue */ 121))
     },
   }
 } catch (e) {
